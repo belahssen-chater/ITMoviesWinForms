@@ -24,5 +24,10 @@ namespace ITMovies
                 gererLesAdminsBtn.Enabled = true;
             }
         }
+
+        private void changerMdpBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
