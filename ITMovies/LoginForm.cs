@@ -25,8 +25,9 @@ namespace ITMovies
             Database.connection.Open();
             SqlCommand command;
             SqlDataReader reader;
-            string customerQuery = $"SELECT id FROM clients WHERE id='{loginField.Text}' AND mdp='{passwordField.Text}'";
-            string adminQuery = $"SELECT id FROM admins WHERE id='{loginField.Text}' AND mdp='{passwordField.Text}'";
+            string pwd = Utilities.hashPwd(passwordField.Text);
+            string customerQuery = $"SELECT id FROM clients WHERE id='{loginField.Text}' AND mdp='{pwd}'";
+            string adminQuery = $"SELECT id FROM admins WHERE id='{loginField.Text}' AND mdp='{pwd}'";
             
 
             //Client check
@@ -35,19 +36,24 @@ namespace ITMovies
             if (reader.Read())
             {
                 id = reader.GetString(0);
+                Client client = new Client(id);
+                reader.Close();
                 MessageBox.Show($"Bienvenue client {id}");
 
             }
             else
             {
                 //Admin check
-                reader.Close();
+                if (!reader.IsClosed)
+                    reader.Close();
                 command = new SqlCommand(adminQuery, Database.connection);
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
                     id = reader.GetString(0);
                     Admin admin = new Admin(id);
+                    if (!reader.IsClosed)
+                        reader.Close();
                     new AccueilAdmin(admin).Show();
           
                 }
@@ -55,10 +61,15 @@ namespace ITMovies
                 {
                     MessageBox.Show("Login ou mot de passe incorrect");
                 }
-                reader.Close();
+                if (!reader.IsClosed)
+                    reader.Close();
             }
             Database.connection.Close();
+            if (!reader.IsClosed)
+                reader.Close();
+
 
         }
+
     }
 }

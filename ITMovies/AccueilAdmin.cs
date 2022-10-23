@@ -12,6 +12,7 @@ namespace ITMovies
 {
     public partial class AccueilAdmin : Form
     {
+        private Admin admin;
         public AccueilAdmin()
         {
             InitializeComponent();
@@ -19,6 +20,7 @@ namespace ITMovies
         public AccueilAdmin(Admin admin)
         {
             InitializeComponent();
+            this.admin = admin;
             if (admin.id == "super")
             {
                 gererLesAdminsBtn.Enabled = true;
@@ -27,7 +29,7 @@ namespace ITMovies
 
         private void changerMdpBtn_Click(object sender, EventArgs e)
         {
-
+            new ChangerMdp(admin).Show();
         }
     }
 }
