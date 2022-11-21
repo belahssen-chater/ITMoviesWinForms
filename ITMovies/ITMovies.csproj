@@ -77,6 +77,7 @@
     <Compile Include="AccueilClient.Designer.cs">
       <DependentUpon>AccueilClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Achat.cs" />
     <Compile Include="Admin.cs" />
     <Compile Include="ChangerMdp.cs">
       <SubType>Form</SubType>
@@ -87,11 +88,59 @@
     <Compile Include="Client.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Film.cs" />
-    <Compile Include="GererLesAdmins.cs">
+    <Compile Include="GestionAchats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GererLesAdmins.Designer.cs">
-      <DependentUpon>GererLesAdmins.cs</DependentUpon>
+    <Compile Include="GestionAchats.Designer.cs">
+      <DependentUpon>GestionAchats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAdmin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAdmin2.Designer.cs">
+      <DependentUpon>GestionAdmin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionAdmins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionAdmins.Designer.cs">
+      <DependentUpon>GestionAdmins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClient.Designer.cs">
+      <DependentUpon>GestionClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionClient2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClient2.Designer.cs">
+      <DependentUpon>GestionClient2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionFilms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionFilms.Designer.cs">
+      <DependentUpon>GestionFilms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionFilms2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionFilms2.Designer.cs">
+      <DependentUpon>GestionFilms2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoriqueClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoriqueClient.Designer.cs">
+      <DependentUpon>HistoriqueClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeFilms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeFilms.Designer.cs">
+      <DependentUpon>ListeFilms.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -101,15 +150,48 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReinitialisationMdp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReinitialisationMdp.Designer.cs">
+      <DependentUpon>ReinitialisationMdp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="AccueilAdmin.resx">
       <DependentUpon>AccueilAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccueilClient.resx">
+      <DependentUpon>AccueilClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangerMdp.resx">
       <DependentUpon>ChangerMdp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GererLesAdmins.resx">
-      <DependentUpon>GererLesAdmins.cs</DependentUpon>
+    <EmbeddedResource Include="GestionAchats.resx">
+      <DependentUpon>GestionAchats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAdmin2.resx">
+      <DependentUpon>GestionAdmin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionAdmins.resx">
+      <DependentUpon>GestionAdmins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionClient.resx">
+      <DependentUpon>GestionClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionClient2.resx">
+      <DependentUpon>GestionClient2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionFilms.resx">
+      <DependentUpon>GestionFilms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionFilms2.resx">
+      <DependentUpon>GestionFilms2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoriqueClient.resx">
+      <DependentUpon>HistoriqueClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeFilms.resx">
+      <DependentUpon>ListeFilms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -124,6 +206,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReinitialisationMdp.resx">
+      <DependentUpon>ReinitialisationMdp.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +264,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\it movies %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IT %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IT %283%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

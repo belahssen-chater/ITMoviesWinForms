@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace ITMovies
 {
@@ -31,21 +32,60 @@ namespace ITMovies
             //Add the admin to the database
             //Return true if the admin was added successfully
             //Return false if the admin was not added successfully
-            return true;
+            string sql = "INSERT INTO Admins (id, nom, mdp, tel) VALUES (@id, @nom, @mdp, @tel)";
+            SqlCommand cmd = new SqlCommand(sql, Database.connection);
+            cmd.Parameters.AddWithValue("@id", this.id);
+            cmd.Parameters.AddWithValue("@nom", this.nom);
+            cmd.Parameters.AddWithValue("@mdp", this.mdp);
+            cmd.Parameters.AddWithValue("@tel", this.tel);
+            Database.connection.Open();
+            int rows = cmd.ExecuteNonQuery();
+            Database.connection.Close();
+            return rows > 0;
+            
         }
         public bool deleteAdmin()
         {
             //Delete the admin from the database
             //Return true if the admin was deleted successfully
             //Return false if the admin was not deleted successfully
-            return true;
+            string sql = "DELETE FROM Admins WHERE id = @id";
+            SqlCommand cmd = new SqlCommand(sql, Database.connection);
+            cmd.Parameters.AddWithValue("@id", this.id);
+            Database.connection.Open();
+            int rows = cmd.ExecuteNonQuery();
+            Database.connection.Close();
+            return rows > 0;
+            
         }
-        public bool updateAdmin()
+        public bool updateAdmin(Admin admin)
         {
             //Update the admin in the database
             //Return true if the admin was updated successfully
             //Return false if the admin was not updated successfully
-            return true;
+            string sql;
+            if (this.mdp != "")
+            {
+                sql = "UPDATE Admins SET nom = @nom, mdp = @mdp, tel = @tel WHERE id = @id";
+
+            }
+            else
+            {
+                sql = "UPDATE Admins SET nom = @nom, tel = @tel WHERE id = @id";
+            }
+            SqlCommand cmd = new SqlCommand(sql, Database.connection);
+            cmd.Parameters.AddWithValue("@id", this.id);
+            cmd.Parameters.AddWithValue("@nom", admin.nom);
+            cmd.Parameters.AddWithValue("@tel", admin.tel);
+            if (this.mdp != "")
+                cmd.Parameters.AddWithValue("@mdp", admin.mdp);
+            Database.connection.Open();
+            int rowsAffected = cmd.ExecuteNonQuery();
+            Database.connection.Close();
+            return rowsAffected > 0;
+            
+
+
         }
         public bool equals(Admin admin)
         {
@@ -57,7 +97,15 @@ namespace ITMovies
             //Check if the admin with the id passed as parameter exists in the database
             //Return true if the admin exists
             //Return false if the admin does not exist
-            return true;
+            string sql = "SELECT * FROM Admins WHERE id = @id";
+            SqlCommand cmd = new SqlCommand(sql, Database.connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            Database.connection.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool exists = reader.HasRows;
+            reader.Close();
+            Database.connection.Close();
+            return exists;
         }
 
 

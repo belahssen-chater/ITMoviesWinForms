@@ -31,5 +31,30 @@ namespace ITMovies
         {
             new ChangerMdp(admin).Show();
         }
+
+        private void gererLesFilms_Click(object sender, EventArgs e)
+        {
+            new GestionFilms2().Show();
+        }
+
+        private void gererLesClientsBtn_Click(object sender, EventArgs e)
+        {
+            new GestionClient2().Show();
+        }
+
+        private void gererLesAdminsBtn_Click(object sender, EventArgs e)
+        {
+            new GestionAdmin2().Show();
+        }
+
+        private void afficherHistoriqueBtn_Click(object sender, EventArgs e)
+        {
+            new GestionAchats().Show();
+        }
+
+        private void AccueilAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

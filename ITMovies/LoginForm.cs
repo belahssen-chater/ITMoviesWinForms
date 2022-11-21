@@ -38,7 +38,7 @@ namespace ITMovies
                 id = reader.GetString(0);
                 Client client = new Client(id);
                 reader.Close();
-                MessageBox.Show($"Bienvenue client {id}");
+                new AccueilClient(client).Show();
 
             }
             else
@@ -54,6 +54,7 @@ namespace ITMovies
                     Admin admin = new Admin(id);
                     if (!reader.IsClosed)
                         reader.Close();
+                    this.Hide();
                     new AccueilAdmin(admin).Show();
           
                 }
@@ -71,5 +72,15 @@ namespace ITMovies
 
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void passwordField_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button1.PerformClick();
+        }
     }
 }

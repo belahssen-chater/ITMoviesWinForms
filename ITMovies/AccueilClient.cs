@@ -12,9 +12,30 @@ namespace ITMovies
 {
     public partial class AccueilClient : Form
     {
+        Client client;
         public AccueilClient()
         {
             InitializeComponent();
+        }
+        public AccueilClient(Client client)
+        {
+            InitializeComponent();
+            this.client = client;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new ChangerMdp(client).Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new ListeFilms(client).Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new HistoriqueClient(client).Show();
         }
     }
 }
