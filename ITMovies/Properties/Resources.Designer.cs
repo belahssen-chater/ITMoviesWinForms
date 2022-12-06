@@ -163,6 +163,16 @@ namespace ITMovies.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IT {
+            get {
+                object obj = ResourceManager.GetObject("IT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IT__2_ {
             get {
                 object obj = ResourceManager.GetObject("IT (2)", resourceCulture);
@@ -213,6 +223,16 @@ namespace ITMovies.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap New_Project_2021_05_05T203443_887 {
+            get {
+                object obj = ResourceManager.GetObject("New-Project-2021-05-05T203443.887", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profil_de_lutilisateur {
             get {
                 object obj = ResourceManager.GetObject("profil-de-lutilisateur", resourceCulture);
@@ -226,6 +246,17 @@ namespace ITMovies.Properties {
         internal static System.Drawing.Bitmap profil_de_lutilisateur1 {
             get {
                 object obj = ResourceManager.GetObject("profil-de-lutilisateur1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rows_of_red_velvet_seats_watching_movies_in_the_cinema_with_copy_space_banner_background_entertainment_and_theater_concept_3d_illustration_rendering_photo {
+            get {
+                object obj = ResourceManager.GetObject("rows-of-red-velvet-seats-watching-movies-in-the-cinema-with-copy-space-banner-bac" +
+                        "kground-entertainment-and-theater-concept-3d-illustration-rendering-photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

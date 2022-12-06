@@ -274,5 +274,14 @@
   <ItemGroup>
     <None Include="Resources\IT %283%29.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IT.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rows-of-red-velvet-seats-watching-movies-in-the-cinema-with-copy-space-banner-background-entertainment-and-theater-concept-3d-illustration-rendering-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New-Project-2021-05-05T203443.887.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
